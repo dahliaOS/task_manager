@@ -207,7 +207,7 @@ class Tasks extends StatelessWidget {
 }
 
 class TasksPage extends StatefulWidget {
-  TasksPage({Key key}) : super(key: key);
+  TasksPage({Key? key}) : super(key: key);
   @override
   _TasksState createState() => new _TasksState();
 }
