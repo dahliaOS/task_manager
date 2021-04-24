@@ -275,12 +275,11 @@ Container buildProcess(context, String icon, String name) {
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          new Image.asset(
-            icon,
-            fit: BoxFit.fill,
-            width: 30.0,
-            height: 30.0,
-          ),
+          new Image.asset(icon,
+              fit: BoxFit.fill,
+              width: 30.0,
+              height: 30.0,
+              package: "task_manager"),
           new Padding(
             padding: const EdgeInsets.all(5.0),
             child: new Text(
