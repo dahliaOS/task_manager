@@ -390,6 +390,7 @@ class Process extends StatelessWidget {
                   fit: BoxFit.fill,
                   width: 64.0,
                   height: 64.0,
+                  package: "task_monitor",
                 ),
                 //
                 new Text(
