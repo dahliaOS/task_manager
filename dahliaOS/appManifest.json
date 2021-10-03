@@ -1,0 +1,10 @@
+{
+      "id": "io.dahliaos.task_manager",
+      "altName": "task_manager",
+      "realName": "Task Manager",
+      "version": "dahliaOS-latest",
+      "description": "View and manage processes",
+      "sourceCode": "https://github.com/dahliaOS/task_manager",
+      "hash": "DAP_AUTOMATION_PKGHASH",
+      "architecture": "x86_64"
+},
