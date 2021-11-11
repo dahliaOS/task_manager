@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=Pangolin Mobile
-Exec=pangolin_mobile
+Name=Task Manager
+Exec=task_manager
 Terminal=false
-Icon=pangolin_mobile
+Icon=task_manager
 Type=Application
 Categories=Utility;
