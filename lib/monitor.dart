@@ -255,7 +255,7 @@ class _TasksState extends State<TasksPage> {
             ),
           ),
           body: TabBarView(children: [
-            new Process(),
+            new ProcessPage(),
             Icon(Icons.movie),
             Icon(Icons.games),
           ]),
@@ -294,7 +294,7 @@ Container buildProcess(context, String icon, String name) {
   );
 }
 
-class Process extends StatelessWidget {
+class ProcessPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
