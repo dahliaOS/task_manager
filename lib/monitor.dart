@@ -14,154 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-/*import 'package:flutter/material.dart';
-
-class MonitorApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-        body: 
-        
-        new Column(children: [
-
- Container(
-            height: 45,
-            color: Color(0xff00838f),
-            child: Row(children: [
-              new Expanded(child: 
-              new Container(
-                  width: 256,
-                  child: Row(children: [
-                    new Container(
-                        width: 125,
-                        height: 40,
-                        
-                        margin: EdgeInsets.only(
-                            left: 10, right: 0, bottom: 0, top: 10),
-                      decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-          
-                    topLeft:  const  Radius.circular(5.0),
-                    topRight: const  Radius.circular(5.0),
-            
-          ),
-          color: Colors.white,),
-                        child: MaterialButton(
-                          onPressed:null,
-                            child: Text('PROCESSES',
-                                style: TextStyle(
-                                    color: Color(0xff222222),
-                                    fontWeight: FontWeight.w400)))),
-
-                new Container(
-                        width: 125,
-                        height: 40,
-                        
-                        margin: EdgeInsets.only(
-                            left: 5, right: 0, bottom: 0, top: 10),
-                      decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-          
-                    topLeft:  const  Radius.circular(5.0),
-                    topRight: const  Radius.circular(5.0),
-            
-          ),
-          color: Colors.white,),
-                        child: MaterialButton(
-                          onPressed:null,
-                            child: Text('RESOURCES',
-                                style: TextStyle(
-                                    color: Color(0xff222222),
-                                    fontWeight: FontWeight.w400)))),
-
-
-
-
-                                    new Container(
-                        width: 125,
-                        height: 40,
-                        
-                        margin: EdgeInsets.only(
-                            left: 5, right: 0, bottom: 0, top: 10),
-                      decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-          
-                    topLeft:  const  Radius.circular(5.0),
-                    topRight: const  Radius.circular(5.0),
-            
-          ),
-          color: Colors.white,),
-                        child: MaterialButton(
-                          onPressed:null,
-                            child: Text('CONTAINERS',
-                                style: TextStyle(
-                                    color: Color(0xff222222),
-                                    fontWeight: FontWeight.w400)))),
-                
-                
-                  ])),),
-              
-             new IconButton(
-            icon: const Icon(Icons.more_vert),
-            onPressed:null,
-            iconSize: 25.0,
-            color: const Color(0xFFffffff),
-          ), 
-             
-            ])),
-
-new Expanded(child: new Row(children: [
-
-
-
-
-
-
-],),)
-
-
-        ],)
-       );
-  }
-}
-
-void main() {
-  runApp(new Tasks());
-}
-class Tasks extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Generated App',
-      theme: new ThemeData(
-        primarySwatch: Colors.cyan,
-      ),
-      home: new TasksPage(),
-    );
-  }
-}
-
-class TasksPage extends StatefulWidget {
-  TasksPage({Key key}) : super(key: key);
-  @override
-  _TasksState createState() => new _TasksState();
-}
-
-class _TasksState extends State<TasksPage> {
-    @override
-    Widget build(BuildContext context) {
-      return new MonitorApp();
-    }
-}
-
-*/
-
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(new Tasks());
+  runApp(Tasks());
 }
 
 extension CustomColorScheme on ColorScheme {
@@ -188,20 +44,20 @@ extension CustomColorScheme on ColorScheme {
 class Tasks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Task Manager',
-      theme: new ThemeData(
+      theme: ThemeData(
         brightness: Brightness.light,
         primarySwatch: Colors.cyan,
       ),
-      darkTheme: new ThemeData(
+      darkTheme: ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.cyan,
       ),
       /*themeMode: Pangolin.settingsBox.get("darkMode")
           ? ThemeMode.dark
           : ThemeMode.light,*/
-      home: new TasksPage(),
+      home: TasksPage(),
     );
   }
 }
@@ -209,13 +65,13 @@ class Tasks extends StatelessWidget {
 class TasksPage extends StatefulWidget {
   TasksPage({Key? key}) : super(key: key);
   @override
-  _TasksState createState() => new _TasksState();
+  _TasksState createState() => _TasksState();
 }
 
 class _TasksState extends State<TasksPage> {
   @override
   Widget build(BuildContext context) {
-    return new DefaultTabController(
+    return DefaultTabController(
         length: 3,
         child: Scaffold(
           appBar: PreferredSize(
@@ -255,7 +111,7 @@ class _TasksState extends State<TasksPage> {
             ),
           ),
           body: TabBarView(children: [
-            new ProcessPage(),
+            ProcessPage(),
             Icon(Icons.movie),
             Icon(Icons.games),
           ]),
@@ -264,27 +120,27 @@ class _TasksState extends State<TasksPage> {
 }
 
 Container buildProcess(context, String icon, String name) {
-  return new Container(
+  return Container(
     padding: const EdgeInsets.only(
       top: 25,
       left: 15,
     ),
     alignment: Alignment.centerLeft,
-    child: new Row(
+    child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          new Image.asset(icon,
+          Image.asset(icon,
               fit: BoxFit.fill,
               width: 30.0,
               height: 30.0,
               package: "task_manager"),
-          new Padding(
+          Padding(
             padding: const EdgeInsets.all(5.0),
-            child: new Text(
+            child: Text(
               name,
-              style: new TextStyle(
+              style: TextStyle(
                   fontSize: 15.0,
                   color: Theme.of(context).colorScheme.foregroundText,
                   fontFamily: "Roboto"),
@@ -303,9 +159,9 @@ class ProcessPage extends StatelessWidget {
         child: Container(
           color: Theme.of(context).colorScheme.body2,
           margin: EdgeInsets.all(10),
-          child: new SingleChildScrollView(
+          child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
-            child: new Column(
+            child: Column(
               children: [
                 buildProcess(context, 'assets/images/icons/PNG/calculator.png',
                     'Calculator'),
@@ -381,11 +237,11 @@ class ProcessPage extends StatelessWidget {
       Container(
         width: 300,
         color: Color(0x0),
-        child: new Padding(
+        child: Padding(
             padding: const EdgeInsets.all(15.0),
-            child: new Column(
+            child: Column(
               children: [
-                new Image.asset(
+                Image.asset(
                   'assets/images/icons/PNG/grey-drag.png',
                   fit: BoxFit.fill,
                   width: 64.0,
@@ -393,47 +249,49 @@ class ProcessPage extends StatelessWidget {
                   package: "task_manager",
                 ),
                 //
-                new Text(
+                Text(
                   "Select a process to view stats and manage functionality.",
-                  style: new TextStyle(
+                  style: TextStyle(
                       fontSize: 15.0,
                       color: Theme.of(context).colorScheme.foregroundText,
                       fontFamily: "Roboto"),
                   textAlign: TextAlign.center,
                 ),
-                new Text(
+                Text(
                   "null",
-                  style: new TextStyle(
+                  style: TextStyle(
                       fontSize: 15.0,
                       color: Theme.of(context).colorScheme.foregroundText,
                       fontFamily: "Roboto"),
                 ),
-                new Text(
+                Text(
                   "null",
-                  style: new TextStyle(
+                  style: TextStyle(
                       fontSize: 15.0,
                       color: Theme.of(context).colorScheme.foregroundText,
                       fontFamily: "Roboto"),
                 ),
-                new RaisedButton(
-                    key: null,
+                ElevatedButton(
                     onPressed: null,
-                    color: Colors.cyan[800],
-                    child: new Text(
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(Colors.cyan[800])),
+                    child: Text(
                       "LAUNCH",
                     )),
-                new RaisedButton(
-                    key: null,
+                ElevatedButton(
                     onPressed: null,
-                    color: Colors.cyan[800],
-                    child: new Text(
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(Colors.cyan[800])),
+                    child: Text(
                       "ABOUT",
                     )),
-                new RaisedButton(
-                    key: null,
+                ElevatedButton(
                     onPressed: null,
-                    color: Colors.red,
-                    child: new Text(
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.red)),
+                    child: Text(
                       "KILL",
                     )),
               ],
